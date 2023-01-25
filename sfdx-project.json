@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "Ambiente DEV",
+  "namespace": "",
+  "sfdcLoginUrl": "https://empathetic-unicorn-ehkbjj-dev-ed.lightning.force.com",
+  "sourceApiVersion": "56.0"
+}
