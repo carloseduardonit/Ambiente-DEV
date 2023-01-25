@@ -1,4 +1,13 @@
+    /**
+     * Trilha  de Estudo: Desenvolvedor iniciante
+     * Url:https://trailhead.salesforce.com/pt-BR/content/learn/trails/force_com_dev_beginner?trailmix_creator_id=tormen&trailmix_slug=baby-steps-4-devs
+     * Módulo: Banco de dados e noções básicas do Apex
+     * url:https://trailhead.salesforce.com/pt-BR/content/learn/modules/apex_database?trail_id=force_com_dev_beginner&trailmix_creator_id=tormen&trailmix_slug=baby-steps-4-devs
+     */
 public class AccountHandler{
+    /**
+     * Metodo responsavel pela  criação e inserção no objeto conta conforme o usuario determinar a quantidade
+     */
     public static void insertAccount(integer num){
         integer count =1;
         list <Account> addAccounts = new list <Account>();
@@ -11,5 +20,13 @@ public class AccountHandler{
             addAccounts.add(acc);
         } 
         insert addAccounts;
+    }
+
+    /**
+     * Metodo responsavel pela  Obtenção  do registro no objeto conta conforme o usuario determinar Nome
+     */
+    public static String obterID(String NameString){
+        Account acc = [Select ID from Account where Name = :NameString limite 1];
+        return  acc.Id;
     }
 }
