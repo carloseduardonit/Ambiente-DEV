@@ -26,7 +26,7 @@ public class AccountHandler{
      * Metodo responsavel pela  Obtenção  do registro no objeto conta conforme o usuario determinar Nome
      */
     public static String obterID(String NameString){
-        Account acc = [Select ID from Account where Name = :NameString limite 1];
+        Account acc = [Select ID from Account where Name = :NameString limit 1];
         return  acc.Id;
     }
 }
