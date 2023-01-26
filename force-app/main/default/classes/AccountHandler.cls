@@ -1,4 +1,4 @@
-    /**
+/**
      * Trilha  de Estudo: Desenvolvedor iniciante
      * Url:https://trailhead.salesforce.com/pt-BR/content/learn/trails/force_com_dev_beginner?trailmix_creator_id=tormen&trailmix_slug=baby-steps-4-devs
      * Módulo: Banco de dados e noções básicas do Apex
@@ -27,6 +27,7 @@ public class AccountHandler{
      */
     public static String obterID(String NameString){
         Account acc = [Select ID from Account where Name = :NameString limit 1];
+        System.debug(acc.Id);
         return  acc.Id;
     }
 }
