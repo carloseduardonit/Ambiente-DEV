@@ -1,8 +1,30 @@
-<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+/**
+* Projeto:Transform SQL Queries to SOQL Queries in a Lightning App
+* Trilha: Write Your First SOQL Query 
+*/
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller = "Books4EveryoneHomeController">
   <aura:attribute name="Books" type="Book__c" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
   <lightning:card title="Books4Everyone Books">
     <aura:set attribute="body">
-      TODO: Update this to display data!
+      // inicio docorpo
+      <table class="sdls-table sdls-table_bordered sdls-table_cell-buffer">
+        <thead>
+          <tr class="sdls-text-title_caps">
+            <th scope="col">Book Titles</th>
+            <th scope="col">Book Decriptons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items ="{!v.Books}" var="books">
+            <tr scope = "row">
+              <td>{!books.Name}</td>
+              <td>{!books.Description__c}</td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table>
+      // Fim do corpo
     </aura:set>
   </lightning:card>
 </aura:component>

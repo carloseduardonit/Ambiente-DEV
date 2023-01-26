@@ -1,3 +1,8 @@
+/**
+* Projeto:Transform SQL Queries to SOQL Queries in a Lightning App
+* Trilha: Write Your First SOQL Query 
+* URL: https://trailhead.salesforce.com/pt-BR/content/learn/projects/transform-sql-queries-to-soql-queries-in-a-lightning-app/write-your-first-soql-query
+*/
 public with sharing class Books4EveryoneHomeController {
 @AuraEnabled
     public static List<Book__c> getBooks() {
@@ -6,8 +11,8 @@ public with sharing class Books4EveryoneHomeController {
     }
     
     static string nameGenre = 'Fantasy';
-    static String [] StringGenre = new String [10];
-    static Integer [] IntegerGenre = new Integer [StringGenre.size()];
+    static String [] stringGenre = new String [10];
+    static Integer [] integerGenre = new Integer [stringGenre.size()];
     
     /**
 	* Método  utilizar variavel estatico  para obter a  quantidade de  registro 
@@ -39,18 +44,18 @@ public with sharing class Books4EveryoneHomeController {
     public static void classifyGenre(){
         List <Book__c> books = getBooks();
         for(Book__c bb: books){
-            for(Integer a = 0 ; a <StringGenre.size() ; a++){
-                if(StringGenre[a] == bb.Genre__c){
-                    if(IntegerGenre[a]== 0 || IntegerGenre[a]== null ){
-                       IntegerGenre[a] = 1; 
+            for(Integer a = 0 ; a <stringGenre.size() ; a++){
+                if(stringGenre[a] == bb.Genre__c){
+                    if(integerGenre[a]== 0 || integerGenre[a]== null ){
+                        integerGenre[a] = 1; 
                     }else{
-                        IntegerGenre[a]++;
+                        integerGenre[a]++;
                     }
                     break;
-                } else if(StringGenre[a] == null){
-                    StringGenre[a] = bb.Genre__c;
-                    if(IntegerGenre[a]== 0 || IntegerGenre[a]== null ){
-                       IntegerGenre[a] = 1; 
+                } else if(stringGenre[a] == null){
+                    stringGenre[a] = bb.Genre__c;
+                    if(integerGenre[a]== 0 || integerGenre[a]== null ){
+                        integerGenre[a] = 1; 
                     }
                     break;
                 }
@@ -63,10 +68,10 @@ public with sharing class Books4EveryoneHomeController {
 	**/
     public static void imprintGenre(){
         classifyGenre();
-        for(integer a =0 ;a<StringGenre.size();a++){
-            String  ast = StringGenre[a];
+        for(integer a =0 ;a<stringGenre.size();a++){
+            String  ast = stringGenre[a];
             if(!String.isEmpty(ast) && !String.isBlank(ast) && ast != null){
-                System.debug('Genero: ' +StringGenre[a] + ' | contar: ' + IntegerGenre[a]);
+                System.debug('Genero: ' +stringGenre[a] + ' | contar: ' + integerGenre[a]);
             }
         }
     }

@@ -4,7 +4,7 @@
      * Módulo: Banco de dados e noções básicas do Apex
      * url:https://trailhead.salesforce.com/pt-BR/content/learn/modules/apex_database?trail_id=force_com_dev_beginner&trailmix_creator_id=tormen&trailmix_slug=baby-steps-4-devs
      */
-public class AccountHandler{
+public with sharing class AccountHandler{
     /**
      * Metodo responsavel pela  criação e inserção no objeto conta conforme o usuario determinar a quantidade
      */
@@ -25,8 +25,8 @@ public class AccountHandler{
     /**
      * Metodo responsavel pela  Obtenção  do registro no objeto conta conforme o usuario determinar Nome
      */
-    public static String obterID(String NameString){
-        Account acc = [Select ID from Account where Name = :NameString limit 1];
+    public static String obterID(String nameString){
+        Account acc = [Select ID from Account where Name = :nameString limit 1];
         //System.debug(acc.Id);
         return  acc.Id;
     }
