@@ -27,7 +27,7 @@ public class AccountHandler{
      */
     public static String obterID(String NameString){
         Account acc = [Select ID from Account where Name = :NameString limit 1];
-        System.debug(acc.Id);
+        //System.debug(acc.Id);
         return  acc.Id;
     }
 }
