@@ -1,6 +1,7 @@
 /**
 * Projeto:Transform SQL Queries to SOQL Queries in a Lightning App
 * Trilha: Write Your First SOQL Query 
+* URL: https://trailhead.salesforce.com/pt-BR/content/learn/projects/transform-sql-queries-to-soql-queries-in-a-lightning-app/write-your-first-soql-query
 */
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" controller = "Books4EveryoneHomeController">
   <aura:attribute name="Books" type="Book__c" />
