@@ -1,0 +1,38 @@
+<aura:component controller="ContactsTodayController" implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <ltng:require styles="/resource/CT_CombinedCSS"/>
+
+    <aura:attribute name="important_contacts" type="Contact[]"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.getImportantContacts}"/>
+
+    <lightning:card title="Important Contacts for Today">
+        <article class="forceCard">
+            <div style="padding: 5px;">
+                These contacts are related to events, tasks or cases you own.
+                <br/>
+                <hr/>
+                If no contacts were found, associate a contact with a current event, task or case.
+            </div>
+            <span class="card-body">
+                <div class="forceFilterList alert-div">
+                    <ul class="light">
+                        <aura:iteration var="contact" items="{!v.important_contacts}">
+                            <li class="light forceListRecord alert-li">
+                                <div class="itemTitle body" id="{!contact.Id}" onclick="{!c.gotoRecord}">
+                                    <h3>{!contact.Name}</h3>
+                                    <ul class="itemRows truncate">
+                                        <li class="tableRowGroup">
+                                            <ui:outputText value="{!contact.Description}"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </span>
+        </article>
+    </lightning:card>
+
+</aura:component>

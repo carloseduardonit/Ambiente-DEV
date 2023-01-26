@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+  <aura:attribute name="Books" type="Book__c" />
+  <lightning:card title="Books4Everyone Books">
+    <aura:set attribute="body">
+      TODO: Update this to display data!
+    </aura:set>
+  </lightning:card>
+</aura:component>
