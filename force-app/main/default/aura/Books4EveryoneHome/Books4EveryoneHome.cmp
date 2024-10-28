@@ -4,12 +4,12 @@
 * URL: https://trailhead.salesforce.com/pt-BR/content/learn/projects/transform-sql-queries-to-soql-queries-in-a-lightning-app/write-your-first-soql-query
 */
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" controller = "Books4EveryoneHomeController">
-  <aura:attribute name="Books" type="Book__c" />
-  <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+  <aura:attribute name ="Books" type = "Book__c" />
+  <aura:handler name = "init" action = "{!c.doInit}" value = "{!this}"/>
   <lightning:card title="Books4Everyone Books">
-    <aura:set attribute="body">
+    <aura:set attribute = "body">
       // inicio docorpo
-      <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+      <table class= "slds-table slds-table_bordered slds-table_cell-buffer">
         <thead>
           <tr class="slds-text-title_caps">
             <th scope="col">Book Titles</th>
